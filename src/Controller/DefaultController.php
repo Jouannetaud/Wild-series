@@ -11,12 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class DefaultController extends AbstractController
 {
       /**
-     * @Route("/defaults/", name="App_index")
+     * @Route("/", name="App_index")
      */
 
     public function index(): Response
     {
-        return $this->render('default/index.html.twig',['Salutation' => 'Bienvenue !']);
+        return $this->render('index.html.twig',['Salutation' => 'Bienvenue !']);
             
     }
 }
