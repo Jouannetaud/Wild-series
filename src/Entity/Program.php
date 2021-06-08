@@ -34,7 +34,7 @@ class Program
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class)
-     * @ORM\JoinColumn(nullable=false,targetEntity)
+     * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
