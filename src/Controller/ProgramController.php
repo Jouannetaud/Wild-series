@@ -52,7 +52,7 @@ class ProgramController extends AbstractController
     }
 
     /**
-     * @Route("/{program}", name="program_show", methods={"GET"})
+     * @Route("/{id}", name="program_show", methods={"GET"})
      */
     public function show(Program $program ): Response
     {
