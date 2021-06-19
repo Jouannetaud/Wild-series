@@ -22,22 +22,17 @@ class Actor
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $firstname;
+    private $name;
 
     /**
      * @ORM\ManyToMany(targetEntity=Program::class, inversedBy="actors")
      */
     private $programs;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $lastname;
+    
+   
 
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $birth_day;
+   
 
     public function __construct()
     {
@@ -49,14 +44,14 @@ class Actor
         return $this->id;
     }
 
-    public function getFirstname(): ?string
+    public function getName(): ?string
     {
-        return $this->firstname;
+        return $this->name;
     }
 
-    public function setFirstname(string $firstname): self
+    public function setName(string $name): self
     {
-        $this->firstname = $firstname;
+        $this->name = $name;
 
         return $this;
     }
@@ -85,32 +80,9 @@ class Actor
         return $this;
     }
 
-    public function getLastname(): ?string
-    {
-        return $this->lastname;
-    }
-
-    public function setLastname(string $lastname): self
-    {
-        $this->lastname = $lastname;
-
-        return $this;
-    }
-
-    public function getBirthDay(): ?\DateTimeInterface
-    {
-        return $this->birth_day;
-    }
-
-    public function setBirthDay(?\DateTimeInterface $birth_day): self
-    {
-        $this->birth_day = $birth_day;
-
-        return $this;
-    }
 
     public function getSelector() : string
     {
-        return $this->getFirstname() . ' - ' . $this->getLastname();
+        return $this->getId() . ' - ' . $this->getName();
     }
 }

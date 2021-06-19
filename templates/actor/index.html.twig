@@ -9,9 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Birth_day</th>
+                <th>name</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,9 +17,8 @@
         {% for actor in actors %}
             <tr>
                 <td>{{ actor.id }}</td>
-                <td>{{ actor.firstname }}</td>
-                <td>{{ actor.lastname }}</td>
-                <td>{{ actor.birthDay ? actor.birthDay|date('Y-m-d') : '' }}</td>
+                <td>{{ actor.name }}</td>
+               
                 <td>
                     <a href="{{ path('actor_show', {'id': actor.id}) }}">show</a>
                     <a href="{{ path('actor_edit', {'id': actor.id}) }}">edit</a>
